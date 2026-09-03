@@ -1,0 +1,4 @@
+Pasta pronta para o álbum "Fé e cultura".
+Basta arrastar as fotos para aqui (ou para dentro desta pasta pelo GitHub) que
+o álbum aparece sozinho no site. Este ficheiro pode ficar ou ser apagado —
+não interfere em nada.
