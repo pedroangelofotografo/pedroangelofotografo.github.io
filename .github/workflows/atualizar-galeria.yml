@@ -1,0 +1,48 @@
+name: Atualizar galeria
+
+# Corre sempre que alguem acrescenta, troca ou apaga fotos na pasta fotos/,
+# venha isso do site do GitHub (arrastar e largar) ou de um "git push".
+# Regenera o fotos.js e faz commit dele de volta no repositorio.
+on:
+  push:
+    paths:
+      - 'fotos/**'
+      - 'scripts/gerar-galeria.py'
+  workflow_dispatch:      # permite correr a mao pelo separador "Actions"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: galeria-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter o repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar o Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar o Pillow (para comprimir fotos grandes)
+        run: pip install --quiet Pillow
+
+      - name: Gerar o fotos.js (e comprimir fotos grandes de camara)
+        run: python3 scripts/gerar-galeria.py
+
+      - name: Guardar as alteracoes
+        run: |
+          if git diff --quiet -- fotos.js fotos/; then
+            echo "Nada mudou na galeria."
+            exit 0
+          fi
+          git config user.name  "Galeria automatica"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fotos.js fotos/
+          git commit -m "Atualizar galeria automaticamente (fotos grandes comprimidas para a web)"
+          git push
