@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<!--
+  Portfólio de Pedro Ângelo
+  © 2026 Pedro Ângelo. Todos os direitos reservados. / All rights reserved.
+  As fotografias, vídeos e textos são protegidos por direitos autorais (Lei 9.610/98)
+  e não podem ser copiados, reproduzidos ou reutilizados sem autorização por escrito.
+  Ver ficheiro LICENSE.
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedro Ângelo · Fotografia e vídeo · Pirenópolis, GO</title>
+
+    <meta name="description" id="metaDescription" content="Pedro Ângelo — fotógrafo e videógrafo em Pirenópolis, Goiás. Cobertura profissional de eventos, casamentos e paisagens." />
+    <meta name="author" id="metaAuthor" content="Pedro Ângelo" />
+    <meta name="robots" content="index, follow" />
+    <meta name="copyright" id="metaCopyright" content="© 2026 Pedro Ângelo. Todos os direitos reservados." />
+
+    <!-- FONTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200..600;1,300..500&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ============================================================
+           VARIÁVEIS E RESET
+           ============================================================ */
+        :root {
+            --primary: #1A2F5C;
+            --primary-dark: #0F1E3D;
+            --ink: #1a1a1a;
+            --muted: #767676;
+            --bg: #ffffff;
+            --bg-soft: #f6f6f4;
+            --line: #ececec;
+            --whatsapp-green: #25D366;
+            --max-width: 1240px;
+            --gap: 20px;
+
+            /* PROPORÇÃO PADRÃO DAS FOTOS — mude só este valor.
+               Cada foto pode ter a sua própria proporção pelo campo "formato".
+               3 / 2 (atual) · 1 / 1 (quadrado) · 4 / 5 (retrato) · 16 / 9 (wide) */
+            --ratio: 3 / 2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.6;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            -webkit-user-drag: none;
+            user-drag: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* ============================================================
+           HEADER (fino, fixo)
+           ============================================================ */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 14px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--primary);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            font-weight: 300;
+            color: #a8a8a8;
+        }
+
+        .filters {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .filters button.filter {
+            background: none;
+            border: none;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            cursor: pointer;
+            padding: 4px 0;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .filters button.filter:hover,
+        .filters button.filter.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .filters button.filter:focus-visible,
+        .lang-btn:focus-visible,
+        .logo:focus-visible,
+        .whatsapp-float:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 3px;
+        }
+
+        /* Seletor de idioma */
+        .lang-switch {
+            display: flex;
+            gap: 2px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 3px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            padding: 5px 12px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* ============================================================
+           HERO (o "tema" da página)
+           ============================================================ */
+        .hero {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 96px 32px 64px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-weight: 200;
+            font-size: clamp(2.3rem, 6vw, 4.1rem);
+            letter-spacing: 0.14em;
+            line-height: 1.1;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            font-weight: 300;
+            color: #b6b6b6;
+        }
+
+        .hero .tagline {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: clamp(0.8rem, 2vw, 0.95rem);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        /* ============================================================
+           BARRA DE CATÁLOGO (álbum ativo + contagem + voltar)
+           ============================================================ */
+        .catalog-meta {
+            max-width: var(--max-width);
+            margin: 0 auto 26px;
+            padding: 0 32px 16px;
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .catalog-meta .back-btn {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            padding: 0;
+            transition: color 0.2s;
+        }
+
+        .catalog-meta .back-btn:hover {
+            color: var(--primary);
+        }
+
+        .catalog-meta .back-btn:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 3px;
+        }
+
+        .catalog-meta .back-btn[hidden] {
+            display: none;
+        }
+
+        .catalog-meta h2 {
+            font-weight: 300;
+            font-size: 1.15rem;
+            letter-spacing: 0.02em;
+            color: var(--ink);
+        }
+
+        .catalog-meta .count {
+            color: var(--muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* ============================================================
+           GALERIA (capas de álbum + fotos)
+           ============================================================ */
+        .gallery {
+            max-width: var(--max-width);
+            margin: 0 auto 90px;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--gap);
+            scroll-margin-top: 80px;
+        }
+
+        .card {
+            position: relative;
+        }
+
+        .card .media {
+            position: relative;
+            width: 100%;
+            aspect-ratio: var(--ratio);
+            overflow: hidden;
+            background: var(--bg-soft);
+        }
+
+        .card .media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .card .open-btn {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .card .media:focus-within {
+            outline: 2px solid var(--primary);
+            outline-offset: 3px;
+        }
+
+        .card .cap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 16px 14px 13px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0));
+            color: #fff;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .card .cap .cap-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .card .cap .cap-sub {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 3px;
+        }
+
+        /* Selo de vídeo */
+        .card .play-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.45);
+            color: #fff;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            padding-left: 2px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .card.is-video .play-badge {
+            display: flex;
+        }
+
+        /* Em ecrãs com rato: legenda esconde e revela no hover; imagem faz zoom */
+        @media (hover: hover) {
+            .card .cap {
+                opacity: 0;
+                transform: translateY(8px);
+                transition: opacity 0.35s ease, transform 0.35s ease;
+            }
+            .card .media:hover .cap,
+            .card .media:focus-within .cap {
+                opacity: 1;
+                transform: none;
+            }
+            .card .media:hover img {
+                transform: scale(1.05);
+            }
+        }
+
+        /* ------------------------------------------------------------
+           CAPA DE ÁLBUM (vista inicial) — título sobre a imagem
+           ------------------------------------------------------------ */
+        .cover .media {
+            cursor: pointer;
+        }
+
+        .cover .media::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 30, 61, 0.34);
+            transition: background 0.35s ease;
+            z-index: 1;
+        }
+
+        .cover .cover-label {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 16px;
+            pointer-events: none;
+        }
+
+        .cover .cover-label .t {
+            font-size: 1.15rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .cover .cover-label .c {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-top: 8px;
+            opacity: 0.85;
+        }
+
+        .cover .open-btn {
+            z-index: 3;
+        }
+
+        @media (hover: hover) {
+            /* zoom da imagem já vem da regra genérica ".card .media:hover img" acima */
+            .cover .media:hover::after {
+                background: rgba(15, 30, 61, 0.15);
+            }
+        }
+
+        /* ============================================================
+           LIGHTBOX
+           ============================================================ */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 40px;
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox img,
+        .lightbox video {
+            max-width: 100%;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 3px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            -webkit-user-drag: none;
+            user-drag: none;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 22px;
+            right: 30px;
+            font-size: 1.9rem;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 300;
+            background: none;
+            border: none;
+            line-height: 1;
+            transition: transform 0.2s;
+        }
+
+        .lightbox .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2.4rem;
+            font-weight: 200;
+            cursor: pointer;
+            padding: 12px 20px;
+            opacity: 0.65;
+            transition: opacity 0.2s;
+            line-height: 1;
+        }
+
+        .lightbox .nav-btn:hover,
+        .lightbox .close:hover {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.06);
+        }
+
+        .lightbox .close:hover {
+            transform: scale(1.1);
+        }
+
+        .lightbox .prev { left: 14px; }
+        .lightbox .next { right: 14px; }
+
+        .lightbox .nav-btn:focus-visible,
+        .lightbox .close:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+
+        .lightbox .caption-lb {
+            position: absolute;
+            bottom: 32px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #ccc;
+            font-size: 0.88rem;
+            padding: 0 20px;
+        }
+
+        .lightbox .caption-lb strong {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .lightbox .caption-lb .counter {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.72rem;
+            color: #888;
+            letter-spacing: 0.1em;
+        }
+
+        /* ============================================================
+           CONTATO
+           ============================================================ */
+        .contact {
+            max-width: 560px;
+            margin: 0 auto 80px;
+            padding: 0 32px;
+        }
+
+        .contact h2 {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 0.04em;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .contact input,
+        .contact textarea {
+            font: inherit;
+            font-size: 0.9rem;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            background: var(--bg-soft);
+        }
+
+        .contact input:focus,
+        .contact textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .contact .enviar {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            transition: background 0.2s;
+        }
+
+        .contact .enviar:hover {
+            background: var(--primary-dark);
+        }
+
+        .contact .outros-contatos {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .contact .outros-contatos a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* ============================================================
+           WHATSAPP FLUTUANTE
+           ============================================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--whatsapp-green);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.55);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        /* ============================================================
+           MODAL DE POLÍTICAS (LGPD)
+           ============================================================ */
+        .policy-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            padding: 20px;
+        }
+
+        .policy-modal[hidden] {
+            display: none;
+        }
+
+        .policy-content {
+            position: relative;
+            background: #fff;
+            max-width: 560px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 36px 32px;
+            border-radius: 6px;
+            line-height: 1.7;
+            font-size: 0.9rem;
+        }
+
+        .policy-content h3 {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .policy-content p {
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+
+        .policy-content .policy-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--muted);
+        }
+
+        /* ============================================================
+           RODAPÉ
+           ============================================================ */
+        footer {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 40px 32px 34px;
+            border-top: 1px solid var(--line);
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        footer .footer-links button {
+            background: none;
+            border: none;
+            color: var(--muted);
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.75rem;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+        }
+
+        footer .footer-links button:hover {
+            color: var(--primary);
+        }
+
+        footer .copy {
+            color: #bbb;
+            font-size: 0.7rem;
+        }
+
+        /* ============================================================
+           RESPONSIVO
+           ============================================================ */
+        @media (max-width: 992px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                padding: 0 20px;
+            }
+            .hero {
+                padding: 70px 20px 48px;
+            }
+            .catalog-meta {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-inner {
+                padding: 12px 16px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .filters {
+                gap: 14px;
+                justify-content: space-between;
+            }
+            .filters button.filter {
+                font-size: 0.6rem;
+                letter-spacing: 0.06em;
+            }
+            .lang-switch {
+                align-self: center;
+            }
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 0 16px;
+            }
+            .catalog-meta {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .whatsapp-float {
+                width: 52px;
+                height: 52px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+            .lightbox {
+                padding: 16px;
+            }
+            .lightbox .close {
+                top: 12px;
+                right: 18px;
+                font-size: 1.5rem;
+            }
+            .lightbox .nav-btn {
+                font-size: 1.9rem;
+                padding: 8px 12px;
+            }
+            footer {
+                padding: 24px 16px;
+            }
+            footer .footer-links {
+                gap: 14px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="logo" id="logo" tabindex="0" role="button" aria-label="Início"></a>
+            <nav class="filters" id="navFiltros" aria-label="Álbuns"></nav>
+            <div class="lang-switch" role="group" aria-label="Idioma / Language">
+                <button type="button" data-lang="pt" class="lang-btn active">PT</button>
+                <button type="button" data-lang="en" class="lang-btn">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    HERO — o nome vem das constantes no JS (edite uma vez só)
+    ============================================================ -->
+    <section class="hero">
+        <h1 id="heroName"></h1>
+        <p class="tagline" id="heroTagline"></p>
+    </section>
+
+    <!-- BARRA DE CATÁLOGO -->
+    <div class="catalog-meta">
+        <button class="back-btn" id="backToAlbums" type="button" hidden></button>
+        <h2 id="catalogHeading"></h2>
+        <span class="count" id="catalogCount"></span>
+    </div>
+
+    <!-- GALERIA (gerada via JS: capas de álbum OU fotos do álbum) -->
+    <div class="gallery" id="gallery" role="list"></div>
+
+    <!-- ============================================================
+    CONTATO
+    ============================================================ -->
+    <section class="contact" id="contato">
+        <h2 id="contactHeading"></h2>
+        <form id="contactForm">
+            <input type="text" name="nome" id="inputNome" required />
+            <input type="text" name="contato" id="inputContato" required />
+            <textarea name="mensagem" id="inputMensagem"></textarea>
+            <button type="submit" class="enviar" id="enviarBtn"></button>
+        </form>
+        <p class="outros-contatos">
+            <span id="outrosContatosLabel"></span>
+            <a id="linkEmail" href="#"></a> ·
+            <a id="linkInstagram" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </p>
+    </section>
+
+    <!-- ============================================================
+    WHATSAPP FLUTUANTE
+    O href é preenchido pelo JS a partir de WHATSAPP_NUMERO, para nunca
+    ficar dessincronizado do número configurado lá em cima.
+    ============================================================ -->
+    <a href="https://wa.me/5562993793792" target="_blank" rel="noopener noreferrer" class="whatsapp-float" id="whatsappFloat" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização ampliada">
+        <button class="close" id="lightboxClose" aria-label="Fechar">✕</button>
+        <button class="nav-btn prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+        <img id="lightboxImg" src="" alt="" />
+        <video id="lightboxVideo" controls playsinline style="display:none"></video>
+        <button class="nav-btn next" id="lightboxNext" aria-label="Próxima">›</button>
+        <div class="caption-lb" id="lightboxCaption"></div>
+    </div>
+
+    <!-- MODAL DE POLÍTICAS -->
+    <div class="policy-modal" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="policyTitle" hidden>
+        <div class="policy-content">
+            <button class="policy-close" id="policyClose" aria-label="Fechar">✕</button>
+            <div id="policyBody"></div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-links">
+            <button data-policy="privacidade" id="btnPolPrivacidade"></button>
+            <button data-policy="termos" id="btnPolTermos"></button>
+            <button data-policy="lgpd" id="btnPolLgpd"></button>
+        </div>
+        <div class="copy" id="footerCopy"></div>
+    </footer>
+
+    <!-- Lista de álbuns e fotos, gerada automaticamente a partir da pasta fotos/ -->
+    <script src="fotos.js"></script>
+
+    <script>
+        // ============================================================
+        // 0. CONFIGURAÇÃO — edite aqui
+        // ============================================================
+        const NOME_PRIMEIRO  = 'Pedro';
+        const NOME_SOBRENOME = 'Ângelo';
+        const NOME_FOTOGRAFO = NOME_PRIMEIRO + ' ' + NOME_SOBRENOME;
+
+        // Formato do wa.me: código do país + DDD + número, só dígitos.
+        // 55 (Brasil) + 62 (Goiás) + 99379-3792
+        const WHATSAPP_NUMERO = '5562993793792';
+        const EMAIL_CONTATO   = 'pedroangelofotografo@gmail.com';
+        const INSTAGRAM_USER  = 'pedroangelofotografo';
+        const LOCALIZACAO     = 'Pirenópolis · Goiás';
+
+        // Idioma atual (guardado entre visitas)
+        let idioma = localStorage.getItem('idioma') === 'en' ? 'en' : 'pt';
+
+        // Textos da interface
+        const STRINGS = {
+            pt: {
+                sufTitulo: ' · Fotografia e vídeo em Pirenópolis, GO',
+                metaDescription: NOME_FOTOGRAFO + ' — fotógrafo e videógrafo em Pirenópolis, Goiás. Cobertura profissional de eventos, casamentos e paisagens.',
+                heroTagline: 'Fotografia e vídeo · ' + LOCALIZACAO,
+                albunsHeading: 'Álbuns',
+                albumSing: 'álbum', albumPlur: 'álbuns',
+                fotoSing: 'foto', fotoPlur: 'fotos',
+                verAlbum: 'Ver álbum', voltarAlbuns: 'Todos os álbuns',
+                ampliar: 'Ampliar', reproduzir: 'Reproduzir vídeo',
+                lightboxLabel: 'Visualização ampliada',
+                fechar: 'Fechar', anterior: 'Anterior', proximo: 'Próxima',
+                contactHeading: 'Contato',
+                nomePlaceholder: 'Nome',
+                contatoPlaceholder: 'Email ou Instagram',
+                mensagemPlaceholder: 'Conte-me sobre o seu projeto (data, local, tipo de sessão...)',
+                enviarBtn: 'Enviar via WhatsApp',
+                outrosContatos: 'Ou fale direto:',
+                whatsappLabel: 'Falar no WhatsApp',
+                direitos: 'Todos os direitos reservados.'
+            },
+            en: {
+                sufTitulo: ' · Photography in Pirenópolis, Brazil',
+                metaDescription: NOME_FOTOGRAFO + ' — photographer and videographer in Pirenópolis, Goiás, Brazil. Professional event, wedding and landscape coverage.',
+                heroTagline: 'Photography and film · Pirenópolis, Brazil',
+                albunsHeading: 'Albums',
+                albumSing: 'album', albumPlur: 'albums',
+                fotoSing: 'photo', fotoPlur: 'photos',
+                verAlbum: 'View album', voltarAlbuns: 'All albums',
+                ampliar: 'Enlarge', reproduzir: 'Play video',
+                lightboxLabel: 'Enlarged view',
+                fechar: 'Close', anterior: 'Previous', proximo: 'Next',
+                contactHeading: 'Contact',
+                nomePlaceholder: 'Name',
+                contatoPlaceholder: 'Email or Instagram',
+                mensagemPlaceholder: 'Tell me about your project (date, location, session type...)',
+                enviarBtn: 'Send via WhatsApp',
+                outrosContatos: 'Or reach out directly:',
+                whatsappLabel: 'Chat on WhatsApp',
+                direitos: 'All rights reserved.'
+            }
+        };
+
+        // ============================================================
+        // 2. ÁLBUNS E FOTOS
+        // Cada álbum aparece como uma CAPA. Ao clicar, mostram-se as fotos dele.
+        //
+        // ⚠️ AS FOTOS ABAIXO SÃO DE AMOSTRA (banco de imagens gratuito
+        // "loremflickr.com", só para pré-visualizar o layout). NÃO SÃO fotos
+        // do Pedro — troque pelas fotos reais assim que ele as enviar.
+        //
+        // ADICIONAR UM ÁLBUM: copie um bloco { key, titulo, capa, fotos:[...] }.
+        //   key    -> identificador sem espaços/acentos (ex.: 'gestante')
+        //   titulo -> nome em PT e EN
+        //   capa   -> imagem da capa (ex.: 'fotos/casamentos/capa.jpg')
+        //
+        // ADICIONAR UMA FOTO: acrescente um objeto na lista "fotos" do álbum:
+        //   { id: 10, imagem: 'fotos/casamentos/01.jpg', titulo: 'Cerimónia', ano: 2026 }
+        //   id       -> número ÚNICO em todo o site (nunca repita)
+        //   formato  -> (opcional) '1 / 1', '4 / 5', '16 / 9'... proporção só desta foto
+        //   vídeo    -> (opcional) tipo:'video', video:'fotos/x.mp4', imagem:'capa.jpg'
+        //
+        // Sugestão: uma pasta por álbum dentro de "fotos/"
+        //   ex.: fotos/retratos/  fotos/casamentos/  fotos/paisagens/
+        // ============================================================
+        // ============================================================
+        // 2. ÁLBUNS E FOTOS — vêm do ficheiro fotos.js
+        //
+        // NÃO se editam fotos aqui. O fotos.js é gerado sozinho a partir
+        // do conteúdo da pasta fotos/ (ver scripts/gerar-galeria.py e
+        // .github/workflows/atualizar-galeria.yml).
+        //
+        // Para acrescentar fotos: pôr os ficheiros na pasta do álbum.
+        // Para criar um álbum:    criar uma pasta nova dentro de fotos/.
+        // Para mudar nomes/ordem: editar fotos/albuns.json.
+        // ============================================================
+        const ALBUNS = Array.isArray(window.ALBUNS) ? window.ALBUNS : [];
+
+        if (!ALBUNS.length) {
+            console.warn('Nenhum álbum carregado. O fotos.js não foi encontrado ou está vazio — corra: python3 scripts/gerar-galeria.py');
+        }
+
+        // ============================================================
+        // 1. PROTEÇÕES DE DIREITOS
+        // ============================================================
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO' || e.target.closest('.lightbox')) {
+                e.preventDefault();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            const ctrl = e.ctrlKey || e.metaKey;
+            const key = e.key.toLowerCase();
+            if (ctrl && key === 's') e.preventDefault();
+            if (ctrl && key === 'u') e.preventDefault();
+            if ((ctrl && e.shiftKey && key === 'i') || e.key === 'F12') e.preventDefault();
+            if (ctrl && key === 'c' && (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO')) e.preventDefault();
+        });
+
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') e.preventDefault();
+        });
+
+        console.log('%c© 2026 ' + NOME_FOTOGRAFO + ' - Todos os direitos reservados.', 'font-size: 16px; font-weight: bold;');
+        console.log('%cImagens protegidas por direitos autorais. Proibida a reprodução sem autorização.', 'font-size: 12px;');
+
+        // ============================================================
+        // 3. MENU (Álbuns + cada álbum)
+        // ============================================================
+        function renderNav() {
+            const nav = document.getElementById('navFiltros');
+            nav.innerHTML = '';
+
+            const bAll = document.createElement('button');
+            bAll.className = 'filter';
+            bAll.dataset.view = 'albuns';
+            bAll.textContent = STRINGS[idioma].albunsHeading;
+            bAll.addEventListener('click', goCovers);
+            nav.appendChild(bAll);
+
+            ALBUNS.forEach(function(a) {
+                const b = document.createElement('button');
+                b.className = 'filter';
+                b.dataset.album = a.key;
+                b.textContent = a.titulo[idioma];
+                b.addEventListener('click', function() { goAlbum(a.key); });
+                nav.appendChild(b);
+            });
+        }
+
+        function atualizarNavAtivo(st) {
+            document.querySelectorAll('#navFiltros .filter').forEach(function(b) {
+                const ativo = st.view === 'covers'
+                    ? b.dataset.view === 'albuns'
+                    : b.dataset.album === st.key;
+                b.classList.toggle('active', ativo);
+                b.setAttribute('aria-pressed', String(ativo));
+            });
+        }
+
+        // ============================================================
+        // 4. GALERIA — capas de álbum e fotos
+        // ============================================================
+        let albumAtivo = null;
+        let fotosVisiveis = [];
+
+        function criarCover(album) {
+            const card = document.createElement('div');
+            card.className = 'card cover';
+            card.setAttribute('role', 'listitem');
+
+            const media = document.createElement('div');
+            media.className = 'media';
+
+            const img = document.createElement('img');
+            img.src = album.capa || (album.fotos[0] && album.fotos[0].imagem) || '';
+            img.alt = '';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.draggable = false;
+            media.appendChild(img);
+
+            const label = document.createElement('div');
+            label.className = 'cover-label';
+            const t = document.createElement('div');
+            t.className = 't';
+            t.textContent = album.titulo[idioma];
+            const c = document.createElement('div');
+            c.className = 'c';
+            const n = album.fotos.length;
+            c.textContent = n + ' ' + (n === 1 ? STRINGS[idioma].fotoSing : STRINGS[idioma].fotoPlur);
+            label.appendChild(t);
+            label.appendChild(c);
+            media.appendChild(label);
+
+            const btn = document.createElement('button');
+            btn.className = 'open-btn';
+            btn.setAttribute('aria-label', STRINGS[idioma].verAlbum + ': ' + album.titulo[idioma]);
+            btn.addEventListener('click', function() { goAlbum(album.key); });
+            media.appendChild(btn);
+
+            card.appendChild(media);
+            return card;
+        }
+
+        function criarCard(f) {
+            const ehVideo = f.tipo === 'video' && f.video;
+
+            const card = document.createElement('div');
+            card.className = 'card' + (ehVideo ? ' is-video' : '');
+            card.setAttribute('role', 'listitem');
+
+            const media = document.createElement('div');
+            media.className = 'media';
+            if (f.formato) media.style.aspectRatio = f.formato;
+
+            const img = document.createElement('img');
+            img.src = f.imagem;
+            img.alt = '';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.draggable = false;
+            media.appendChild(img);
+
+            if (ehVideo) {
+                const badge = document.createElement('span');
+                badge.className = 'play-badge';
+                badge.setAttribute('aria-hidden', 'true');
+                badge.textContent = '▶';
+                media.appendChild(badge);
+            }
+
+            const cap = document.createElement('div');
+            cap.className = 'cap';
+            const t = document.createElement('div');
+            t.className = 'cap-title';
+            t.textContent = f.titulo;
+            const s = document.createElement('div');
+            s.className = 'cap-sub';
+            s.textContent = albumAtivo ? albumAtivo.titulo[idioma] : '';
+            cap.appendChild(t);
+            cap.appendChild(s);
+            media.appendChild(cap);
+
+            const btn = document.createElement('button');
+            btn.className = 'open-btn';
+            const acao = ehVideo ? STRINGS[idioma].reproduzir : STRINGS[idioma].ampliar;
+            btn.setAttribute('aria-label', acao + ': ' + f.titulo);
+            btn.addEventListener('click', function() { openLightbox(f.id); });
+            media.appendChild(btn);
+
+            card.appendChild(media);
+            return card;
+        }
+
+        function renderCovers() {
+            albumAtivo = null;
+            fotosVisiveis = [];
+
+            const gallery = document.getElementById('gallery');
+            const frag = document.createDocumentFragment();
+            ALBUNS.forEach(function(a) { frag.appendChild(criarCover(a)); });
+            gallery.innerHTML = '';
+            gallery.appendChild(frag);
+
+            document.getElementById('catalogHeading').textContent = STRINGS[idioma].albunsHeading;
+            const n = ALBUNS.length;
+            document.getElementById('catalogCount').textContent =
+                n + ' ' + (n === 1 ? STRINGS[idioma].albumSing : STRINGS[idioma].albumPlur);
+            document.getElementById('backToAlbums').hidden = true;
+        }
+
+        function renderAlbum(key) {
+            const album = ALBUNS.find(function(a) { return a.key === key; });
+            if (!album) { renderCovers(); return; }
+
+            albumAtivo = album;
+            fotosVisiveis = album.fotos;
+
+            const gallery = document.getElementById('gallery');
+            const frag = document.createDocumentFragment();
+            album.fotos.forEach(function(f) { frag.appendChild(criarCard(f)); });
+            gallery.innerHTML = '';
+            gallery.appendChild(frag);
+
+            document.getElementById('catalogHeading').textContent = album.titulo[idioma];
+            const n = album.fotos.length;
+            document.getElementById('catalogCount').textContent =
+                n + ' ' + (n === 1 ? STRINGS[idioma].fotoSing : STRINGS[idioma].fotoPlur);
+            document.getElementById('backToAlbums').hidden = false;
+        }
+
+        // ============================================================
+        // 5. NAVEGAÇÃO POR ÁLBUM (via #hash — botão voltar do browser funciona)
+        // ============================================================
+        function lerHash() {
+            const h = location.hash.replace(/^#/, '');
+            if (h.indexOf('album-') === 0) {
+                const key = h.slice(6);
+                if (ALBUNS.find(function(a) { return a.key === key; })) {
+                    return { view: 'album', key: key };
+                }
+            }
+            return { view: 'covers' };
+        }
+
+        function render() {
+            const st = lerHash();
+            if (st.view === 'album') renderAlbum(st.key);
+            else renderCovers();
+            atualizarNavAtivo(st);
+        }
+
+        function goCovers() {
+            if (location.hash) {
+                location.hash = '';            // dispara 'hashchange' -> render + scroll
+            } else {
+                render();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function goAlbum(key) {
+            const alvo = 'album-' + key;
+            if (location.hash.replace(/^#/, '') === alvo) {
+                render();
+                document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                location.hash = alvo;          // dispara 'hashchange'
+            }
+        }
+
+        window.addEventListener('hashchange', function() {
+            closeLightbox();
+            render();
+            const st = lerHash();
+            if (st.view === 'album') {
+                document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+
+        // ============================================================
+        // 6. LIGHTBOX (com navegação ‹ ›)
+        // ============================================================
+        let elementoAnterior = null;
+        let lightboxIndex = -1;
+
+        function mostrarMidia(f) {
+            const img = document.getElementById('lightboxImg');
+            const vid = document.getElementById('lightboxVideo');
+
+            if (f.tipo === 'video' && f.video) {
+                img.style.display = 'none';
+                img.removeAttribute('src');
+                vid.style.display = '';
+                vid.src = f.video;
+                if (f.imagem) vid.poster = f.imagem;
+            } else {
+                vid.pause();
+                vid.removeAttribute('src');
+                vid.removeAttribute('poster');
+                vid.style.display = 'none';
+                img.style.display = '';
+                img.src = f.imagem;
+                img.alt = f.titulo;
+            }
+        }
+
+        function atualizarLightbox() {
+            const f = fotosVisiveis[lightboxIndex];
+            if (!f) return;
+
+            mostrarMidia(f);
+
+            const caption = document.getElementById('lightboxCaption');
+            caption.innerHTML = '';
+            const strong = document.createElement('strong');
+            strong.textContent = f.titulo;
+            caption.appendChild(strong);
+            if (albumAtivo) {
+                caption.appendChild(document.createTextNode(' · ' + albumAtivo.titulo[idioma]));
+            }
+            const counter = document.createElement('span');
+            counter.className = 'counter';
+            counter.textContent = (lightboxIndex + 1) + ' / ' + fotosVisiveis.length;
+            caption.appendChild(counter);
+
+            const mostrarSetas = fotosVisiveis.length > 1;
+            document.getElementById('lightboxPrev').style.display = mostrarSetas ? '' : 'none';
+            document.getElementById('lightboxNext').style.display = mostrarSetas ? '' : 'none';
+        }
+
+        function openLightbox(id) {
+            const idx = fotosVisiveis.findIndex(function(item) { return item.id === id; });
+            if (idx < 0) return;
+
+            elementoAnterior = document.activeElement;
+            lightboxIndex = idx;
+            atualizarLightbox();
+
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('lightboxClose').focus();
+        }
+
+        function navegarLightbox(delta) {
+            const n = fotosVisiveis.length;
+            if (n < 2) return;
+            lightboxIndex = (lightboxIndex + delta + n) % n;
+            atualizarLightbox();
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            if (!lb.classList.contains('open')) return;
+            lb.classList.remove('open');
+            const vid = document.getElementById('lightboxVideo');
+            vid.pause();
+            vid.removeAttribute('src');
+            document.body.style.overflow = '';
+            if (elementoAnterior) elementoAnterior.focus();
+        }
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        document.getElementById('lightboxPrev').addEventListener('click', function() { navegarLightbox(-1); });
+        document.getElementById('lightboxNext').addEventListener('click', function() { navegarLightbox(1); });
+
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        // Foco preso dentro do lightbox (ciclo entre os botões visíveis)
+        document.getElementById('lightbox').addEventListener('keydown', function(e) {
+            if (e.key !== 'Tab') return;
+            const botoes = [
+                document.getElementById('lightboxClose'),
+                document.getElementById('lightboxPrev'),
+                document.getElementById('lightboxNext')
+            ].filter(function(b) { return b.offsetParent !== null; });
+            if (!botoes.length) return;
+            const i = botoes.indexOf(document.activeElement);
+            e.preventDefault();
+            const proximo = e.shiftKey
+                ? botoes[(i - 1 + botoes.length) % botoes.length]
+                : botoes[(i + 1) % botoes.length];
+            proximo.focus();
+        });
+
+        // ============================================================
+        // 7. POLÍTICAS (LGPD)
+        // ============================================================
+        const POLITICAS = {
+            privacidade: {
+                titulo: { pt: 'Política de Privacidade', en: 'Privacy Policy' },
+                texto: {
+                    pt: [
+                        'Este site é um portfólio estático e não usa cookies de rastreamento nem ferramentas de análise (analytics).',
+                        'Se você usar o formulário de contato, os dados informados (nome, email/Instagram e mensagem) são enviados diretamente pelo WhatsApp e não ficam armazenados neste site.',
+                        'As fontes (Google Fonts) são carregadas dos servidores do Google, que podem registrar o endereço IP de quem visita — comportamento padrão da web, fora do nosso controle direto.',
+                        'Dúvidas sobre seus dados: ' + EMAIL_CONTATO
+                    ],
+                    en: [
+                        'This site is a static portfolio and does not use tracking cookies or analytics tools.',
+                        'If you use the contact form, the information provided (name, email/Instagram and message) is sent directly via WhatsApp and is not stored on this site.',
+                        'Fonts (Google Fonts) are loaded from Google servers, which may log the visitor IP address — standard web behaviour, outside our direct control.',
+                        'Questions about your data: ' + EMAIL_CONTATO
+                    ]
+                }
+            },
+            termos: {
+                titulo: { pt: 'Termos de Uso', en: 'Terms of Use' },
+                texto: {
+                    pt: [
+                        'Todas as fotografias e vídeos deste site são de autoria de ' + NOME_FOTOGRAFO + ' e protegidos por direitos autorais (Lei 9.610/98).',
+                        'A reprodução, o download ou o uso comercial sem autorização prévia é proibido.',
+                        'Para licenciamento, entre em contato: ' + EMAIL_CONTATO
+                    ],
+                    en: [
+                        'All photographs and videos on this site are authored by ' + NOME_FOTOGRAFO + ' and protected by copyright (Brazilian Law 9.610/98).',
+                        'Reproduction, downloading or commercial use without prior authorisation is prohibited.',
+                        'For licensing, contact: ' + EMAIL_CONTATO
+                    ]
+                }
+            },
+            lgpd: {
+                titulo: { pt: 'LGPD', en: 'Data Protection (LGPD)' },
+                texto: {
+                    pt: [
+                        'Em conformidade com a LGPD (Lei 13.709/2018), você tem direito a confirmar o tratamento de dados, acessá-los, corrigi-los, solicitar anonimização ou exclusão, e revogar consentimento a qualquer momento.',
+                        'Para exercer esses direitos, entre em contato: ' + EMAIL_CONTATO
+                    ],
+                    en: [
+                        'Under Brazil’s LGPD (Law 13.709/2018), you may confirm whether your data is processed, access it, correct it, request anonymisation or deletion, and withdraw consent at any time.',
+                        'To exercise these rights, contact: ' + EMAIL_CONTATO
+                    ]
+                }
+            }
+        };
+
+        let elementoAnteriorPolicy = null;
+        let policyAberta = null;
+
+        function renderPolicyBody(key) {
+            const p = POLITICAS[key];
+            const body = document.getElementById('policyBody');
+            body.innerHTML = '';
+            const h3 = document.createElement('h3');
+            h3.id = 'policyTitle';
+            h3.textContent = p.titulo[idioma];
+            body.appendChild(h3);
+            p.texto[idioma].forEach(function(par) {
+                const pEl = document.createElement('p');
+                pEl.textContent = par;
+                body.appendChild(pEl);
+            });
+        }
+
+        function openPolicy(key) {
+            if (!POLITICAS[key]) return;
+            policyAberta = key;
+            elementoAnteriorPolicy = document.activeElement;
+            renderPolicyBody(key);
+            const modal = document.getElementById('policyModal');
+            modal.hidden = false;
+            document.body.style.overflow = 'hidden';
+            document.getElementById('policyClose').focus();
+        }
+
+        function closePolicy() {
+            const modal = document.getElementById('policyModal');
+            if (modal.hidden) return;
+            modal.hidden = true;
+            policyAberta = null;
+            document.body.style.overflow = '';
+            if (elementoAnteriorPolicy) elementoAnteriorPolicy.focus();
+        }
+
+        document.getElementById('policyClose').addEventListener('click', closePolicy);
+        document.getElementById('policyModal').addEventListener('click', function(e) {
+            if (e.target === this) closePolicy();
+        });
+        document.getElementById('policyModal').addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                document.getElementById('policyClose').focus();
+            }
+        });
+        document.querySelectorAll('footer [data-policy]').forEach(function(btn) {
+            btn.addEventListener('click', function() { openPolicy(this.dataset.policy); });
+        });
+
+        // ============================================================
+        // 8. TECLADO GLOBAL (Escape / setas)
+        // ============================================================
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closePolicy();
+                return;
+            }
+            if (document.getElementById('lightbox').classList.contains('open')) {
+                if (e.key === 'ArrowLeft')  navegarLightbox(-1);
+                if (e.key === 'ArrowRight') navegarLightbox(1);
+            }
+        });
+
+        // ============================================================
+        // 9. FORMULÁRIO → WHATSAPP
+        // ============================================================
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = this.nome.value.trim();
+            const contato = this.contato.value.trim();
+            const mensagem = this.mensagem.value.trim();
+            const texto = 'Olá! Meu nome é ' + nome + ' (contato: ' + contato + ').' + (mensagem ? ' ' + mensagem : '');
+            const url = 'https://wa.me/' + WHATSAPP_NUMERO + '?text=' + encodeURIComponent(texto);
+            window.open(url, '_blank', 'noopener');
+        });
+
+        // ============================================================
+        // 10. IDIOMA (PT / EN)
+        // ============================================================
+        function setNome(el) {
+            el.textContent = '';
+            el.appendChild(document.createTextNode(NOME_PRIMEIRO + ' '));
+            const span = document.createElement('span');
+            span.textContent = NOME_SOBRENOME;
+            el.appendChild(span);
+        }
+
+        function aplicarIdioma() {
+            const s = STRINGS[idioma];
+
+            document.documentElement.lang = idioma === 'pt' ? 'pt-BR' : 'en';
+            document.title = NOME_FOTOGRAFO + s.sufTitulo;
+
+            // Mantém as meta tags do <head> sincronizadas com o nome (edite só NOME_SOBRENOME)
+            document.getElementById('metaDescription').setAttribute('content', s.metaDescription);
+            document.getElementById('metaAuthor').setAttribute('content', NOME_FOTOGRAFO);
+            document.getElementById('metaCopyright').setAttribute('content', '© 2026 ' + NOME_FOTOGRAFO + ' · ' + s.direitos);
+
+            setNome(document.getElementById('logo'));
+            setNome(document.getElementById('heroName'));
+            document.getElementById('heroTagline').textContent = s.heroTagline;
+
+            document.getElementById('backToAlbums').textContent = '‹ ' + s.voltarAlbuns;
+
+            document.getElementById('contactHeading').textContent = s.contactHeading;
+            document.getElementById('inputNome').placeholder = s.nomePlaceholder;
+            document.getElementById('inputContato').placeholder = s.contatoPlaceholder;
+            document.getElementById('inputMensagem').placeholder = s.mensagemPlaceholder;
+            document.getElementById('enviarBtn').textContent = s.enviarBtn;
+            document.getElementById('outrosContatosLabel').textContent = s.outrosContatos;
+
+            document.getElementById('whatsappFloat').setAttribute('aria-label', s.whatsappLabel);
+            document.getElementById('whatsappFloat').href = 'https://wa.me/' + WHATSAPP_NUMERO;
+            const elMail = document.getElementById('linkEmail');
+            elMail.href = 'mailto:' + EMAIL_CONTATO;
+            elMail.textContent = EMAIL_CONTATO;
+            const elIg = document.getElementById('linkInstagram');
+            elIg.href = 'https://instagram.com/' + INSTAGRAM_USER;
+            elIg.textContent = '@' + INSTAGRAM_USER;
+            document.getElementById('lightbox').setAttribute('aria-label', s.lightboxLabel);
+            document.getElementById('lightboxClose').setAttribute('aria-label', s.fechar);
+            document.getElementById('lightboxPrev').setAttribute('aria-label', s.anterior);
+            document.getElementById('lightboxNext').setAttribute('aria-label', s.proximo);
+            document.getElementById('policyClose').setAttribute('aria-label', s.fechar);
+
+            document.getElementById('btnPolPrivacidade').textContent = POLITICAS.privacidade.titulo[idioma];
+            document.getElementById('btnPolTermos').textContent = POLITICAS.termos.titulo[idioma];
+            document.getElementById('btnPolLgpd').textContent = POLITICAS.lgpd.titulo[idioma];
+
+            document.getElementById('footerCopy').textContent = '© 2026 ' + NOME_FOTOGRAFO + ' · ' + s.direitos;
+
+            document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                const ativo = btn.dataset.lang === idioma;
+                btn.classList.toggle('active', ativo);
+                btn.setAttribute('aria-pressed', String(ativo));
+            });
+
+            renderNav();
+            render();
+            if (policyAberta) renderPolicyBody(policyAberta);
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                if (this.dataset.lang === idioma) return;
+                idioma = this.dataset.lang;
+                localStorage.setItem('idioma', idioma);
+                aplicarIdioma();
+            });
+        });
+
+        // Logo volta à página inicial (capas dos álbuns)
+        const logoEl = document.getElementById('logo');
+        logoEl.addEventListener('click', goCovers);
+        logoEl.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goCovers(); }
+        });
+
+        // Botão "voltar aos álbuns"
+        document.getElementById('backToAlbums').addEventListener('click', goCovers);
+
+        // ============================================================
+        // 11. INICIALIZAÇÃO
+        // ============================================================
+        aplicarIdioma();
+    </script>
+</body>
+</html>
