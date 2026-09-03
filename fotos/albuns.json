@@ -1,0 +1,25 @@
+{
+  "_leia_me": "Este ficheiro so serve para dar nome bonito e ordem aos albuns. Cada chave abaixo e o nome de uma pasta dentro de fotos/. Pasta que nao esteja aqui na lista aparece na mesma no site, com o nome da propria pasta.",
+
+  "ordem": [
+    "casamento",
+    "retratos",
+    "ensaio-militar",
+    "festa-do-divino",
+    "fe-cultura",
+    "paisagens",
+    "cidade-de-pedra",
+    "vida-selvagem"
+  ],
+
+  "titulos": {
+    "casamento":       { "pt": "Casamentos e eventos", "en": "Weddings & events" },
+    "retratos":         { "pt": "Retratos",             "en": "Portraits" },
+    "ensaio-militar":   { "pt": "Ensaio militar",        "en": "Military portrait session" },
+    "festa-do-divino": { "pt": "Festa do Divino",      "en": "Festa do Divino" },
+    "fe-cultura":      { "pt": "Fe e cultura",         "en": "Faith & culture" },
+    "paisagens":       { "pt": "Paisagens",            "en": "Landscapes" },
+    "cidade-de-pedra": { "pt": "Cidade de Pedra",      "en": "Cidade de Pedra" },
+    "vida-selvagem":   { "pt": "Vida selvagem",        "en": "Wildlife" }
+  }
+}
