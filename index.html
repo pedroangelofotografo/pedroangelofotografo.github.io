@@ -1592,7 +1592,66 @@
         document.getElementById('backToAlbums').addEventListener('click', goCovers);
 
         // ============================================================
-        // 11. INICIALIZAÇÃO
+        // 11. CATÁLOGO AO VIVO (Supabase) — opcional, nunca quebra o site
+        //
+        // Se o Supabase responder, troca os álbuns pelos que estão
+        // marcados "published" lá (o Pedro edita direto pelo painel,
+        // sem mexer em código nem dar commit). Se falhar por qualquer
+        // motivo — sem internet, projeto pausado, Supabase fora do ar —
+        // o site continua exatamente como já estava, com o que veio
+        // do fotos.js. Álbum/foto sem nada publicado nunca aparece.
+        // ============================================================
+        const SUPABASE_URL = 'https://wxkjkgjgtlvtniygmdtx.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_n8VVgGxrudGkUa58qkU8vA_kWDH0dc1';
+
+        async function carregarCatalogoSupabase() {
+            try {
+                const headers = { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + SUPABASE_KEY };
+                const [rAlbuns, rFotos] = await Promise.all([
+                    fetch(SUPABASE_URL + '/rest/v1/albums?select=id,slug,titulo_pt,titulo_en,sort_order&published=eq.true&order=sort_order.asc', { headers: headers }),
+                    fetch(SUPABASE_URL + '/rest/v1/photos?select=id,album_id,arquivo,legenda,sort_order&published=eq.true&order=album_id.asc,sort_order.asc', { headers: headers })
+                ]);
+                if (!rAlbuns.ok || !rFotos.ok) return;
+
+                const albunsSb = await rAlbuns.json();
+                const fotosSb = await rFotos.json();
+                if (!Array.isArray(albunsSb) || !albunsSb.length || !Array.isArray(fotosSb)) return;
+
+                let proximoId = 1;
+                const novosAlbuns = albunsSb.map(function(a) {
+                    const fotosDoAlbum = fotosSb.filter(function(f) { return f.album_id === a.id; });
+                    const fotos = fotosDoAlbum.map(function(f, i) {
+                        const numero = String(i + 1).padStart(2, '0');
+                        return {
+                            id: proximoId++,
+                            imagem: f.arquivo,
+                            titulo: f.legenda || (a.titulo_pt + ' ' + numero)
+                        };
+                    });
+                    return {
+                        key: a.slug,
+                        titulo: { pt: a.titulo_pt, en: a.titulo_en },
+                        capa: fotos[0] ? fotos[0].imagem : '',
+                        fotos: fotos
+                    };
+                }).filter(function(a) { return a.fotos.length > 0; });
+
+                // Álbum publicado mas ainda sem foto nenhuma não entra —
+                // evita mostrar uma capa vazia (ver conversa de 27/09).
+                if (!novosAlbuns.length) return;
+
+                ALBUNS.length = 0;
+                novosAlbuns.forEach(function(a) { ALBUNS.push(a); });
+                render();
+            } catch (e) {
+                console.warn('Catálogo ao vivo (Supabase) indisponível agora — usando o fotos.js local.', e);
+            }
+        }
+
+        carregarCatalogoSupabase();
+
+        // ============================================================
+        // 12. INICIALIZAÇÃO
         // ============================================================
         aplicarIdioma();
     </script>
