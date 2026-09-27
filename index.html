@@ -1064,6 +1064,27 @@
         let albumAtivo = null;
         let fotosVisiveis = [];
 
+        // Se uma foto falhar ao carregar (rede instável, hiccup momentâneo do
+        // GitHub Pages), tenta de novo uma vez; se falhar de novo, esconde a
+        // imagem quebrada (fica só o fundo neutro do quadrado) em vez de deixar
+        // aparecer o ícone de "imagem quebrada" do navegador — não é profissional.
+        function configurarFallbackImagem(img) {
+            let tentouDeNovo = false;
+            img.addEventListener('error', function() {
+                if (!tentouDeNovo) {
+                    tentouDeNovo = true;
+                    setTimeout(function() {
+                        const src = img.src;
+                        img.src = '';
+                        img.src = src;
+                    }, 800);
+                } else {
+                    img.style.display = 'none';
+                    if (img.parentElement) img.parentElement.classList.add('media-vazia');
+                }
+            });
+        }
+
         function criarCover(album) {
             const card = document.createElement('div');
             card.className = 'card cover';
@@ -1078,6 +1099,7 @@
             img.loading = 'lazy';
             img.decoding = 'async';
             img.draggable = false;
+            configurarFallbackImagem(img);
             media.appendChild(img);
 
             const label = document.createElement('div');
@@ -1120,6 +1142,7 @@
             img.loading = 'lazy';
             img.decoding = 'async';
             img.draggable = false;
+            configurarFallbackImagem(img);
             media.appendChild(img);
 
             if (ehVideo) {
