@@ -4,22 +4,12 @@
   "ordem": [
     "casamento",
     "retratos",
-    "ensaio-militar",
-    "festa-do-divino",
-    "fe-cultura",
-    "paisagens",
-    "cidade-de-pedra",
-    "vida-selvagem"
+    "ensaio-militar"
   ],
 
   "titulos": {
     "casamento":       { "pt": "Casamentos e eventos", "en": "Weddings & events" },
     "retratos":         { "pt": "Retratos",             "en": "Portraits" },
-    "ensaio-militar":   { "pt": "Ensaio militar",        "en": "Military portrait session" },
-    "festa-do-divino": { "pt": "Festa do Divino",      "en": "Festa do Divino" },
-    "fe-cultura":      { "pt": "Fe e cultura",         "en": "Faith & culture" },
-    "paisagens":       { "pt": "Paisagens",            "en": "Landscapes" },
-    "cidade-de-pedra": { "pt": "Cidade de Pedra",      "en": "Cidade de Pedra" },
-    "vida-selvagem":   { "pt": "Vida selvagem",        "en": "Wildlife" }
+    "ensaio-militar":   { "pt": "Ensaio militar",        "en": "Military portrait session" }
   }
 }

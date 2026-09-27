@@ -48,6 +48,15 @@ PASTAS_IGNORADAS = {
     "militar 20 11 2025",
 }
 
+# Álbum escondido do site por decisão do cliente (não apagado do disco).
+# "casamento": as fotos antigas saem do ar porque as próximas vêm pelo
+# Supabase; tirar esta linha (ou mudar de PASTAS_IGNORADAS_TEMP para
+# PASTAS_IGNORADAS) reativa/oficializa quando fizer sentido.
+PASTAS_IGNORADAS_TEMP = {
+    "casamento",
+}
+PASTAS_IGNORADAS |= PASTAS_IGNORADAS_TEMP
+
 # Acima disto, a foto é comprimida antes de entrar no site (ver comprimir_se_preciso).
 LIMITE_BYTES = 700_000     # 700 KB
 LADO_MAIOR_PX = 2000       # lado maior da imagem, em pixels, depois de reduzida
@@ -59,23 +68,40 @@ def titulo_por_defeito(pasta):
     return pasta.replace("-", " ").replace("_", " ").strip().title()
 
 
+def _raiz_singular(palavra):
+    """Aproximação simples de plural -> singular, só para comparar com o título do álbum
+    (evita contar "retrato" como diferente de "Retratos")."""
+    return palavra[:-1] if palavra.endswith("s") and len(palavra) > 3 else palavra
+
+
 def legenda(ficheiro, titulo_album, n):
     """Legenda da foto no lightbox.
 
-    Se o ficheiro tiver um nome com sentido ("cerimonia-igreja.jpg"), usa-o.
-    Se for um nome cru de exportação ("2026-07-23 at 12.45.29.jpeg", "IMG_4821"),
-    usa "<Nome do álbum> 01", que fica muito melhor à vista.
+    Se o nome do ficheiro tiver uma palavra própria da foto ("cerimonia-igreja.jpg"),
+    usa essa palavra. Se o nome só repetir o título do álbum ("retrato-01.jpg" dentro
+    de "Retratos"), for um código cru de câmara ("_DSC0002.jpg") ou uma exportação sem
+    nome ("2026-07-23 at 12.45.29.jpeg", "IMG_4821"), usa "<Nome do álbum> 01", numerado
+    — fica muito melhor do que repetir a mesma palavra, ou um código de ficheiro, em
+    todas as fotos do álbum.
     """
     base = os.path.splitext(ficheiro)[0]
     palavras = base.replace("-", " ").replace("_", " ").split()
-    # Fica só com as palavras que são mesmo texto (>=3 letras, não "at"/"img"/"foto")
+    palavras_titulo = {
+        _raiz_singular(w.lower())
+        for w in titulo_album.replace("-", " ").split()
+    }
+    # Só conta como "com sentido" uma palavra feita só de letras (sem dígito —
+    # filtra códigos de câmara tipo "dsc0002"/"img1234"), com >=3 letras, que não
+    # seja genérica nem apenas repita o título do álbum.
     uteis = [
         w for w in palavras
-        if sum(c.isalpha() for c in w) >= 3
+        if w.isalpha()
+        and len(w) >= 3
         and w.lower() not in {"img", "image", "foto", "photo", "whatsapp", "screenshot"}
+        and _raiz_singular(w.lower()) not in palavras_titulo
     ]
     if uteis:
-        return " ".join(uteis).replace(".", " ").strip().capitalize()
+        return " ".join(uteis).capitalize()
     return "%s %02d" % (titulo_album, n)
 
 

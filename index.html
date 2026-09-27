@@ -12,10 +12,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pedro Ângelo · Fotografia e vídeo · Pirenópolis, GO</title>
 
-    <meta name="description" id="metaDescription" content="Pedro Ângelo — fotógrafo e videógrafo em Pirenópolis, Goiás. Cobertura profissional de eventos, casamentos e paisagens." />
+    <meta name="description" id="metaDescription" content="Pedro Ângelo — fotógrafo e videógrafo em Pirenópolis, Goiás. Casamentos, eventos, retratos e ensaios." />
     <meta name="author" id="metaAuthor" content="Pedro Ângelo" />
     <meta name="robots" content="index, follow" />
     <meta name="copyright" id="metaCopyright" content="© 2026 Pedro Ângelo. Todos os direitos reservados." />
+
+    <link rel="canonical" href="https://pedroangelofotografo.github.io/" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231A2F5C'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23D9A75B' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23D9A75B'/%3E%3C/svg%3E" />
+
+    <!-- REDES SOCIAIS (prévia ao colar o link no WhatsApp/Instagram/etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pedro Ângelo Fotógrafo" />
+    <meta property="og:url" content="https://pedroangelofotografo.github.io/" />
+    <meta property="og:title" id="ogTitle" content="Pedro Ângelo · Fotografia e vídeo · Pirenópolis, GO" />
+    <meta property="og:description" id="ogDescription" content="Pedro Ângelo — fotógrafo e videógrafo em Pirenópolis, Goiás. Casamentos, eventos, retratos e ensaios." />
+    <meta property="og:image" content="https://pedroangelofotografo.github.io/fotos/casamento/2026-07-23%20at%2012.45.29.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" id="twitterTitle" content="Pedro Ângelo · Fotografia e vídeo · Pirenópolis, GO" />
+    <meta name="twitter:description" id="twitterDescription" content="Pedro Ângelo — fotógrafo e videógrafo em Pirenópolis, Goiás. Casamentos, eventos, retratos e ensaios." />
+    <meta name="twitter:image" content="https://pedroangelofotografo.github.io/fotos/casamento/2026-07-23%20at%2012.45.29.jpeg" />
 
     <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -927,7 +942,7 @@
         const STRINGS = {
             pt: {
                 sufTitulo: ' · Fotografia e vídeo em Pirenópolis, GO',
-                metaDescription: NOME_FOTOGRAFO + ' — fotógrafo e videógrafo em Pirenópolis, Goiás. Cobertura profissional de eventos, casamentos e paisagens.',
+                metaDescription: NOME_FOTOGRAFO + ' — fotógrafo e videógrafo em Pirenópolis, Goiás. Casamentos, eventos, retratos e ensaios.',
                 heroTagline: 'Fotografia e vídeo · ' + LOCALIZACAO,
                 albunsHeading: 'Álbuns',
                 albumSing: 'álbum', albumPlur: 'álbuns',
@@ -947,7 +962,7 @@
             },
             en: {
                 sufTitulo: ' · Photography in Pirenópolis, Brazil',
-                metaDescription: NOME_FOTOGRAFO + ' — photographer and videographer in Pirenópolis, Goiás, Brazil. Professional event, wedding and landscape coverage.',
+                metaDescription: NOME_FOTOGRAFO + ' — photographer and videographer in Pirenópolis, Goiás, Brazil. Weddings, events, portraits and photo sessions.',
                 heroTagline: 'Photography and film · Pirenópolis, Brazil',
                 albunsHeading: 'Albums',
                 albumSing: 'album', albumPlur: 'albums',
@@ -967,28 +982,6 @@
             }
         };
 
-        // ============================================================
-        // 2. ÁLBUNS E FOTOS
-        // Cada álbum aparece como uma CAPA. Ao clicar, mostram-se as fotos dele.
-        //
-        // ⚠️ AS FOTOS ABAIXO SÃO DE AMOSTRA (banco de imagens gratuito
-        // "loremflickr.com", só para pré-visualizar o layout). NÃO SÃO fotos
-        // do Pedro — troque pelas fotos reais assim que ele as enviar.
-        //
-        // ADICIONAR UM ÁLBUM: copie um bloco { key, titulo, capa, fotos:[...] }.
-        //   key    -> identificador sem espaços/acentos (ex.: 'gestante')
-        //   titulo -> nome em PT e EN
-        //   capa   -> imagem da capa (ex.: 'fotos/casamentos/capa.jpg')
-        //
-        // ADICIONAR UMA FOTO: acrescente um objeto na lista "fotos" do álbum:
-        //   { id: 10, imagem: 'fotos/casamentos/01.jpg', titulo: 'Cerimónia', ano: 2026 }
-        //   id       -> número ÚNICO em todo o site (nunca repita)
-        //   formato  -> (opcional) '1 / 1', '4 / 5', '16 / 9'... proporção só desta foto
-        //   vídeo    -> (opcional) tipo:'video', video:'fotos/x.mp4', imagem:'capa.jpg'
-        //
-        // Sugestão: uma pasta por álbum dentro de "fotos/"
-        //   ex.: fotos/retratos/  fotos/casamentos/  fotos/paisagens/
-        // ============================================================
         // ============================================================
         // 2. ÁLBUNS E FOTOS — vêm do ficheiro fotos.js
         //
@@ -1507,6 +1500,10 @@
             document.getElementById('metaDescription').setAttribute('content', s.metaDescription);
             document.getElementById('metaAuthor').setAttribute('content', NOME_FOTOGRAFO);
             document.getElementById('metaCopyright').setAttribute('content', '© 2026 ' + NOME_FOTOGRAFO + ' · ' + s.direitos);
+            document.getElementById('ogTitle').setAttribute('content', NOME_FOTOGRAFO + s.sufTitulo);
+            document.getElementById('ogDescription').setAttribute('content', s.metaDescription);
+            document.getElementById('twitterTitle').setAttribute('content', NOME_FOTOGRAFO + s.sufTitulo);
+            document.getElementById('twitterDescription').setAttribute('content', s.metaDescription);
 
             setNome(document.getElementById('logo'));
             setNome(document.getElementById('heroName'));

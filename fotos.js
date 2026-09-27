@@ -5,216 +5,6 @@
 // ============================================================
 window.ALBUNS = [
   {
-    "key": "casamento",
-    "titulo": {
-      "pt": "Casamentos e eventos",
-      "en": "Weddings & events"
-    },
-    "capa": "fotos/casamento/2026-07-23%20at%2012.45.29.jpeg",
-    "fotos": [
-      {
-        "id": 1,
-        "imagem": "fotos/casamento/2026-07-23%20at%2012.45.29.jpeg",
-        "titulo": "Casamentos e eventos 01"
-      },
-      {
-        "id": 2,
-        "imagem": "fotos/casamento/2026-07-23%20at%2012.45.48.jpeg",
-        "titulo": "Casamentos e eventos 02"
-      },
-      {
-        "id": 3,
-        "imagem": "fotos/casamento/2026-07-23%20at%2012.46.05.jpeg",
-        "titulo": "Casamentos e eventos 03"
-      },
-      {
-        "id": 4,
-        "imagem": "fotos/casamento/2026-07-23%20at%2012.47.07.jpeg",
-        "titulo": "Casamentos e eventos 04"
-      },
-      {
-        "id": 5,
-        "imagem": "fotos/casamento/2026-07-23%20at%2012.47.31.jpeg",
-        "titulo": "Casamentos e eventos 05"
-      },
-      {
-        "id": 6,
-        "imagem": "fotos/casamento/2026-07-23%20at%2012.47.40.jpeg",
-        "titulo": "Casamentos e eventos 06"
-      },
-      {
-        "id": 7,
-        "imagem": "fotos/casamento/_DSC0002.jpg",
-        "titulo": "Dsc0002"
-      },
-      {
-        "id": 8,
-        "imagem": "fotos/casamento/_DSC0007.jpg",
-        "titulo": "Dsc0007"
-      },
-      {
-        "id": 9,
-        "imagem": "fotos/casamento/_DSC0012.jpg",
-        "titulo": "Dsc0012"
-      },
-      {
-        "id": 10,
-        "imagem": "fotos/casamento/_DSC0013.jpg",
-        "titulo": "Dsc0013"
-      },
-      {
-        "id": 11,
-        "imagem": "fotos/casamento/_DSC0014.jpg",
-        "titulo": "Dsc0014"
-      },
-      {
-        "id": 12,
-        "imagem": "fotos/casamento/_DSC0018.jpg",
-        "titulo": "Dsc0018"
-      },
-      {
-        "id": 13,
-        "imagem": "fotos/casamento/_DSC0020.jpg",
-        "titulo": "Dsc0020"
-      },
-      {
-        "id": 14,
-        "imagem": "fotos/casamento/_DSC0023.jpg",
-        "titulo": "Dsc0023"
-      },
-      {
-        "id": 15,
-        "imagem": "fotos/casamento/_DSC0024.jpg",
-        "titulo": "Dsc0024"
-      },
-      {
-        "id": 16,
-        "imagem": "fotos/casamento/_DSC0025.jpg",
-        "titulo": "Dsc0025"
-      },
-      {
-        "id": 17,
-        "imagem": "fotos/casamento/_DSC0031.jpg",
-        "titulo": "Dsc0031"
-      },
-      {
-        "id": 18,
-        "imagem": "fotos/casamento/_DSC0034.jpg",
-        "titulo": "Dsc0034"
-      },
-      {
-        "id": 19,
-        "imagem": "fotos/casamento/_DSC0037.jpg",
-        "titulo": "Dsc0037"
-      },
-      {
-        "id": 20,
-        "imagem": "fotos/casamento/_DSC0039.jpg",
-        "titulo": "Dsc0039"
-      },
-      {
-        "id": 21,
-        "imagem": "fotos/casamento/_DSC0042.jpg",
-        "titulo": "Dsc0042"
-      },
-      {
-        "id": 22,
-        "imagem": "fotos/casamento/_DSC0043.jpg",
-        "titulo": "Dsc0043"
-      },
-      {
-        "id": 23,
-        "imagem": "fotos/casamento/_DSC0045.jpg",
-        "titulo": "Dsc0045"
-      },
-      {
-        "id": 24,
-        "imagem": "fotos/casamento/_DSC0047.jpg",
-        "titulo": "Dsc0047"
-      },
-      {
-        "id": 25,
-        "imagem": "fotos/casamento/_DSC0049.jpg",
-        "titulo": "Dsc0049"
-      },
-      {
-        "id": 26,
-        "imagem": "fotos/casamento/_DSC0053.jpg",
-        "titulo": "Dsc0053"
-      },
-      {
-        "id": 27,
-        "imagem": "fotos/casamento/_DSC0055.jpg",
-        "titulo": "Dsc0055"
-      },
-      {
-        "id": 28,
-        "imagem": "fotos/casamento/_DSC0056.jpg",
-        "titulo": "Dsc0056"
-      },
-      {
-        "id": 29,
-        "imagem": "fotos/casamento/_DSC0058.jpg",
-        "titulo": "Dsc0058"
-      },
-      {
-        "id": 30,
-        "imagem": "fotos/casamento/_DSC0058_1.jpg",
-        "titulo": "Dsc0058"
-      },
-      {
-        "id": 31,
-        "imagem": "fotos/casamento/_DSC0064.jpg",
-        "titulo": "Dsc0064"
-      },
-      {
-        "id": 32,
-        "imagem": "fotos/casamento/_DSC0067.jpg",
-        "titulo": "Dsc0067"
-      },
-      {
-        "id": 33,
-        "imagem": "fotos/casamento/_DSC0068.jpg",
-        "titulo": "Dsc0068"
-      },
-      {
-        "id": 34,
-        "imagem": "fotos/casamento/_DSC0069.jpg",
-        "titulo": "Dsc0069"
-      },
-      {
-        "id": 35,
-        "imagem": "fotos/casamento/_DSC0070.jpg",
-        "titulo": "Dsc0070"
-      },
-      {
-        "id": 36,
-        "imagem": "fotos/casamento/_DSC0073.jpg",
-        "titulo": "Dsc0073"
-      },
-      {
-        "id": 37,
-        "imagem": "fotos/casamento/_DSC0074.jpg",
-        "titulo": "Dsc0074"
-      },
-      {
-        "id": 38,
-        "imagem": "fotos/casamento/_DSC0076.jpg",
-        "titulo": "Dsc0076"
-      },
-      {
-        "id": 39,
-        "imagem": "fotos/casamento/_DSC0079.jpg",
-        "titulo": "Dsc0079"
-      },
-      {
-        "id": 40,
-        "imagem": "fotos/casamento/_DSC0079_1.jpg",
-        "titulo": "Dsc0079"
-      }
-    ]
-  },
-  {
     "key": "retratos",
     "titulo": {
       "pt": "Retratos",
@@ -225,162 +15,162 @@ window.ALBUNS = [
       {
         "id": 41,
         "imagem": "fotos/retratos/retrato-01.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 01"
       },
       {
         "id": 42,
         "imagem": "fotos/retratos/retrato-02.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 02"
       },
       {
         "id": 43,
         "imagem": "fotos/retratos/retrato-03.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 03"
       },
       {
         "id": 44,
         "imagem": "fotos/retratos/retrato-04.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 04"
       },
       {
         "id": 45,
         "imagem": "fotos/retratos/retrato-05.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 05"
       },
       {
         "id": 46,
         "imagem": "fotos/retratos/retrato-06.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 06"
       },
       {
         "id": 47,
         "imagem": "fotos/retratos/retrato-07.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 07"
       },
       {
         "id": 48,
         "imagem": "fotos/retratos/retrato-08.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 08"
       },
       {
         "id": 49,
         "imagem": "fotos/retratos/retrato-09.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 09"
       },
       {
         "id": 50,
         "imagem": "fotos/retratos/retrato-10.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 10"
       },
       {
         "id": 51,
         "imagem": "fotos/retratos/retrato-11.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 11"
       },
       {
         "id": 52,
         "imagem": "fotos/retratos/retrato-12.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 12"
       },
       {
         "id": 53,
         "imagem": "fotos/retratos/retrato-13.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 13"
       },
       {
         "id": 54,
         "imagem": "fotos/retratos/retrato-14.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 14"
       },
       {
         "id": 55,
         "imagem": "fotos/retratos/retrato-15.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 15"
       },
       {
         "id": 56,
         "imagem": "fotos/retratos/retrato-16.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 16"
       },
       {
         "id": 57,
         "imagem": "fotos/retratos/retrato-17.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 17"
       },
       {
         "id": 58,
         "imagem": "fotos/retratos/retrato-18.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 18"
       },
       {
         "id": 59,
         "imagem": "fotos/retratos/retrato-19.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 19"
       },
       {
         "id": 60,
         "imagem": "fotos/retratos/retrato-20.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 20"
       },
       {
         "id": 61,
         "imagem": "fotos/retratos/retrato-21.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 21"
       },
       {
         "id": 62,
         "imagem": "fotos/retratos/retrato-22.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 22"
       },
       {
         "id": 63,
         "imagem": "fotos/retratos/retrato-23.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 23"
       },
       {
         "id": 64,
         "imagem": "fotos/retratos/retrato-24.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 24"
       },
       {
         "id": 65,
         "imagem": "fotos/retratos/retrato-25.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 25"
       },
       {
         "id": 66,
         "imagem": "fotos/retratos/retrato-26.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 26"
       },
       {
         "id": 67,
         "imagem": "fotos/retratos/retrato-27.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 27"
       },
       {
         "id": 68,
         "imagem": "fotos/retratos/retrato-28.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 28"
       },
       {
         "id": 69,
         "imagem": "fotos/retratos/retrato-29.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 29"
       },
       {
         "id": 70,
         "imagem": "fotos/retratos/retrato-30.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 30"
       },
       {
         "id": 71,
         "imagem": "fotos/retratos/retrato-31.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 31"
       },
       {
         "id": 72,
         "imagem": "fotos/retratos/retrato-32.jpg",
-        "titulo": "Retrato"
+        "titulo": "Retratos 32"
       }
     ]
   },
@@ -395,192 +185,192 @@ window.ALBUNS = [
       {
         "id": 73,
         "imagem": "fotos/ensaio-militar/ensaio-militar-01.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 01"
       },
       {
         "id": 74,
         "imagem": "fotos/ensaio-militar/ensaio-militar-02.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 02"
       },
       {
         "id": 75,
         "imagem": "fotos/ensaio-militar/ensaio-militar-03.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 03"
       },
       {
         "id": 76,
         "imagem": "fotos/ensaio-militar/ensaio-militar-04.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 04"
       },
       {
         "id": 77,
         "imagem": "fotos/ensaio-militar/ensaio-militar-05.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 05"
       },
       {
         "id": 78,
         "imagem": "fotos/ensaio-militar/ensaio-militar-06.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 06"
       },
       {
         "id": 79,
         "imagem": "fotos/ensaio-militar/ensaio-militar-07.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 07"
       },
       {
         "id": 80,
         "imagem": "fotos/ensaio-militar/ensaio-militar-08.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 08"
       },
       {
         "id": 81,
         "imagem": "fotos/ensaio-militar/ensaio-militar-09.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 09"
       },
       {
         "id": 82,
         "imagem": "fotos/ensaio-militar/ensaio-militar-10.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 10"
       },
       {
         "id": 83,
         "imagem": "fotos/ensaio-militar/ensaio-militar-11.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 11"
       },
       {
         "id": 84,
         "imagem": "fotos/ensaio-militar/ensaio-militar-12.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 12"
       },
       {
         "id": 85,
         "imagem": "fotos/ensaio-militar/ensaio-militar-13.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 13"
       },
       {
         "id": 86,
         "imagem": "fotos/ensaio-militar/ensaio-militar-14.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 14"
       },
       {
         "id": 87,
         "imagem": "fotos/ensaio-militar/ensaio-militar-15.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 15"
       },
       {
         "id": 88,
         "imagem": "fotos/ensaio-militar/ensaio-militar-16.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 16"
       },
       {
         "id": 89,
         "imagem": "fotos/ensaio-militar/ensaio-militar-17.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 17"
       },
       {
         "id": 90,
         "imagem": "fotos/ensaio-militar/ensaio-militar-18.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 18"
       },
       {
         "id": 91,
         "imagem": "fotos/ensaio-militar/ensaio-militar-19.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 19"
       },
       {
         "id": 92,
         "imagem": "fotos/ensaio-militar/ensaio-militar-20.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 20"
       },
       {
         "id": 93,
         "imagem": "fotos/ensaio-militar/ensaio-militar-21.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 21"
       },
       {
         "id": 94,
         "imagem": "fotos/ensaio-militar/ensaio-militar-22.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 22"
       },
       {
         "id": 95,
         "imagem": "fotos/ensaio-militar/ensaio-militar-23.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 23"
       },
       {
         "id": 96,
         "imagem": "fotos/ensaio-militar/ensaio-militar-24.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 24"
       },
       {
         "id": 97,
         "imagem": "fotos/ensaio-militar/ensaio-militar-25.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 25"
       },
       {
         "id": 98,
         "imagem": "fotos/ensaio-militar/ensaio-militar-26.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 26"
       },
       {
         "id": 99,
         "imagem": "fotos/ensaio-militar/ensaio-militar-27.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 27"
       },
       {
         "id": 100,
         "imagem": "fotos/ensaio-militar/ensaio-militar-28.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 28"
       },
       {
         "id": 101,
         "imagem": "fotos/ensaio-militar/ensaio-militar-29.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 29"
       },
       {
         "id": 102,
         "imagem": "fotos/ensaio-militar/ensaio-militar-30.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 30"
       },
       {
         "id": 103,
         "imagem": "fotos/ensaio-militar/ensaio-militar-31.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 31"
       },
       {
         "id": 104,
         "imagem": "fotos/ensaio-militar/ensaio-militar-32.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 32"
       },
       {
         "id": 105,
         "imagem": "fotos/ensaio-militar/ensaio-militar-33.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 33"
       },
       {
         "id": 106,
         "imagem": "fotos/ensaio-militar/ensaio-militar-34.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 34"
       },
       {
         "id": 107,
         "imagem": "fotos/ensaio-militar/ensaio-militar-35.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 35"
       },
       {
         "id": 108,
         "imagem": "fotos/ensaio-militar/ensaio-militar-36.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 36"
       },
       {
         "id": 109,
         "imagem": "fotos/ensaio-militar/ensaio-militar-37.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 37"
       },
       {
         "id": 110,
         "imagem": "fotos/ensaio-militar/ensaio-militar-38.jpg",
-        "titulo": "Ensaio militar"
+        "titulo": "Ensaio militar 38"
       }
     ]
   }
